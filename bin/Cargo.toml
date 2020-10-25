@@ -22,7 +22,6 @@ lazy_static = "1.4.0"
 pulldown-cmark = "0.8.0"
 phf = "0.8.0"
 includedir = "0.6.0"
-lindera = "0.5.1"
 
 [build-dependencies]
 includedir_codegen = "0.6.0"

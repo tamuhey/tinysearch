@@ -28,18 +28,6 @@ fn cleanup(s: String) -> String {
     s.replace(|c: char| !c.is_alphabetic(), " ")
 }
 
-use lindera::tokenizer::Tokenizer;
-
-fn tokenize(s: &str) -> impl Iterator<Item = &str> {
-    let mut tokenizer = Tokenizer::new("decompose", "");
-    tokenizer.tokenize(s).into_iter().filter_map(|tok| {
-        match tok.detail.get(0).map(|d| d.as_str()) {
-            Some("助詞") | Some("助動詞") | Some("記号") | Some("UNK") => None,
-            _ => Some(tok.text),
-        }
-    })
-}
-
 // Read all posts and generate Bloomfilters from them.
 #[no_mangle]
 pub fn generate_filters(
@@ -61,7 +49,8 @@ pub fn generate_filters(
             (
                 post,
                 content.map(|content| {
-                    tokenize(&cleanup(strip_markdown(&content)))
+                    cleanup(strip_markdown(&content))
+                        .split_whitespace()
                         .map(str::to_lowercase)
                         .filter(|word| !stopwords.contains(word))
                         .collect::<HashSet<String>>()
