@@ -1,4 +1,9 @@
 [
+{
+    "title": "今日はいい天気だった",
+    "url": "https://google.com",
+    "body":"今日はいい天気だったが明日はどうだろうか。It's sunnny day"
+    },
   {
     "title": "Maybe You Don't Need Kubernetes",
     "url": "https://endler.dev/2019/maybe-you-dont-need-kubernetes/",
