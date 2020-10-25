@@ -28,6 +28,23 @@ fn cleanup(s: String) -> String {
     s.replace(|c: char| !c.is_alphabetic(), " ")
 }
 
+use rust_icu::brk;
+use rust_icu::sys;
+
+fn tokenize(text: &str) -> impl Iterator<Item = &str> {
+    let iter =
+        brk::UBreakIterator::try_new(sys::UBreakIteratorType::UBRK_WORD, "en", text).unwrap();
+    let mut ids = text.char_indices().skip(1);
+    let n = text.len();
+    iter.scan((0, 0), move |s, x| {
+        let (l, prev) = *s;
+        let x = x as usize;
+        let r = ids.nth(x - prev - 1).map(|(a, _)| a).unwrap_or(n);
+        *s = (r, x);
+        Some(&text[l..r])
+    })
+}
+
 // Read all posts and generate Bloomfilters from them.
 #[no_mangle]
 pub fn generate_filters(
@@ -49,8 +66,7 @@ pub fn generate_filters(
             (
                 post,
                 content.map(|content| {
-                    cleanup(strip_markdown(&content))
-                        .split_whitespace()
+                    tokenize(&cleanup(strip_markdown(&content)))
                         .map(str::to_lowercase)
                         .filter(|word| !stopwords.contains(word))
                         .collect::<HashSet<String>>()
