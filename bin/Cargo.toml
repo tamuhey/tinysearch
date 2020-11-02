@@ -22,7 +22,7 @@ lazy_static = "1.4.0"
 pulldown-cmark = "0.8.0"
 phf = "0.8.0"
 includedir = "0.6.0"
-rust_icu = {git="https://github.com/google/rust_icu"}
+rust_icu = "0.4"
 
 [build-dependencies]
 includedir_codegen = "0.6.0"

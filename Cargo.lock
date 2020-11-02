@@ -544,8 +544,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f8b1774401342f18f804057a108fad4dadf97a933016b6237a9188622f1d2d8d"
 dependencies = [
  "anyhow",
  "log",
@@ -569,8 +570,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_common"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "692e72fec9c5933d101b8ab63df634a2433dca13c44ce60b9ea6bff6a4304ec5"
 dependencies = [
  "anyhow",
  "rust_icu_sys",
@@ -579,8 +581,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_sys"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0ecf04f3ea1a2e742e39d38c4ef7c45e377be354523d0363026586f9e8f961f6"
 dependencies = [
  "anyhow",
  "bindgen",
@@ -591,8 +594,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_ubrk"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6501b848621c7c5e8ecf3664af50c2183b61709fc4bf9131bc13cee9fb021f98"
 dependencies = [
  "log",
  "paste",
@@ -604,8 +608,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_ucal"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c38082e25c97f4cd908caf07e15f5eff1cea1ac82c9c207d37cbe592b4d9a8c3"
 dependencies = [
  "log",
  "paste",
@@ -617,8 +622,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_ucol"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "de5968e90b0f98ba4d3b6015f84a24dad086b7971c1888152db9b89343a205a3"
 dependencies = [
  "anyhow",
  "log",
@@ -631,9 +637,11 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_udat"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "0b8fb9b2a34ac1f56873b70fc02520ef9678612acd48bc4914a43db8eff8ec67"
 dependencies = [
+ "anyhow",
  "log",
  "paste",
  "rust_icu_common",
@@ -646,8 +654,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_udata"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4b382fa97216a611c568aa39f46d8f1de792d360bd9813070609f4500a49f79d"
 dependencies = [
  "log",
  "paste",
@@ -657,8 +666,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_uenum"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e63c020e8175d4ad8d8458d9116f7bbd31125c28d62b07e151e8c6ccb40a5eb5"
 dependencies = [
  "paste",
  "rust_icu_common",
@@ -667,8 +677,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_ulistformatter"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f4d3d5d3325f3a5a2f5e6d41b34bfac0844dba06a1f86ccded348a24101da7b3"
 dependencies = [
  "anyhow",
  "log",
@@ -680,8 +691,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_uloc"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "127ed943113e2728e05d0847976ec44383bc1416f189d9d86729a490df37c10a"
 dependencies = [
  "anyhow",
  "log",
@@ -694,8 +706,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_umsg"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "78b8d76842915e803623459caba92fee980875f3d5c12394ac7d7e3ad2dde3f8"
 dependencies = [
  "anyhow",
  "log",
@@ -709,8 +722,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_ustring"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1364683d94544dc995e502790179e9455ca3d5f25e005001eefd7f2df0ea1335"
 dependencies = [
  "log",
  "paste",
@@ -720,8 +734,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_utext"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "046474053d8896fc64cd781596fb8edce4001ea256e817cc5e9400f5a7487f1f"
 dependencies = [
  "paste",
  "rust_icu_common",
@@ -730,8 +745,9 @@ dependencies = [
 
 [[package]]
 name = "rust_icu_utrans"
-version = "0.4.0"
-source = "git+https://github.com/google/rust_icu#793ba7466125da77a96705487609274be7c0b24c"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "6ed35f12e361a9b6dc4157d2e1b0d03b010a7606b81311dab45080655ef5bbb0"
 dependencies = [
  "anyhow",
  "log",
