@@ -31,20 +31,27 @@ fn cleanup(s: String) -> String {
 use rust_icu::brk;
 use rust_icu::sys;
 
-fn tokenize(text: &str) -> impl Iterator<Item = &str> {
+pub fn tokenize(text: &str) -> impl Iterator<Item = &str> {
     let iter =
         brk::UBreakIterator::try_new(sys::UBreakIteratorType::UBRK_WORD, "en", text).unwrap();
     let mut ids = text.char_indices().skip(1);
-    let n = text.len();
     iter.scan((0, 0), move |s, x| {
         let (l, prev) = *s;
         let x = x as usize;
-        let r = ids.nth(x - prev - 1).map(|(a, _)| a).unwrap_or(n);
-        *s = (r, x);
-        Some(&text[l..r])
+        if let Some((r, _)) = ids.nth(x - prev - 1) {
+            *s = (r, x);
+            Some(&text[l..r])
+        } else {
+            Some(&text[l..])
+        }
     })
 }
 
+#[test]
+fn test_tokenize() {
+    let tokens: Vec<_> = tokenize("今日はいい天気だ").collect();
+    assert_eq!(tokens, &["今日", "は", "いい", "天気", "だ"])
+}
 // Read all posts and generate Bloomfilters from them.
 #[no_mangle]
 pub fn generate_filters(
@@ -66,7 +73,7 @@ pub fn generate_filters(
             (
                 post,
                 content.map(|content| {
-                    tokenize(&cleanup(strip_markdown(&content)))
+                    tokenize(&strip_markdown(&content))
                         .map(str::to_lowercase)
                         .filter(|word| !stopwords.contains(word))
                         .collect::<HashSet<String>>()
